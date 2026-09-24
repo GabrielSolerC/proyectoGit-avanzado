@@ -1,9 +1,10 @@
 name: CD
 
 on:
-  push:
+  pull_request:
     branches:
       - main
+    types: [opened, synchronize, reopened]
 
   workflow_dispatch:
 
@@ -24,7 +25,7 @@ jobs:
         run: |
           VERSION=$(grep -oE 'AppVersion-[0-9]+' README.md | head -1 | cut -d'-' -f2)
           NEXT_VERSION=$((VERSION + 1))
-          DATE=$(date '+%d/%m/%Y %H:%M')
+          DATE=$(date "+%d/%m/%Y %H:%M")
           sed -i "s/AppVersion-$VERSION/AppVersion-$NEXT_VERSION/" README.md
           echo "Fecha actualización: $DATE" >> README.md
 
