@@ -25,7 +25,10 @@ jobs:
 
       - name: Actualizar README
         run: |
-          echo "Añadida feature: ${{ github.head_ref || github.ref_name }}" >> README.md
+          FEATURE="Añadida feature: ${{ github.head_ref || github.ref_name }}"
+          if ! grep -Fxq "$FEATURE" README.md; then
+            echo "$FEATURE" >> README.md
+          fi
 
       - name: Guardar cambios
         run: |
