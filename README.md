@@ -1,4 +1,4 @@
-AppVersion-4
+AppVersion-5
 Fecha actualización: 24/09/2026 11:47
 Fecha actualización: 24/09/2026 12:00
 Añadida feature: feature/ci-cd
@@ -8,3 +8,4 @@ Fecha actualización: 24/09/2026 19:21
 Fecha actualización: 24/09/2026 19:21
 Fecha actualización: 24/09/2026 19:23
 Fecha actualización: 24/09/2026 20:00
+Fecha actualización: 24/09/2026 20:01
