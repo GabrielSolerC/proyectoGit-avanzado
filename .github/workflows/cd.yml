@@ -24,6 +24,7 @@ jobs:
           fetch-depth: 0
 
       - name: Incrementar versión
+        if: github.event_name == 'push'
         run: |
           VERSION=$(grep -oE 'AppVersion-[0-9]+' README.md | head -1 | cut -d'-' -f2)
           NEXT_VERSION=$((VERSION + 1))
@@ -33,6 +34,7 @@ jobs:
           echo "Fecha actualización: $DATE" >> README.md
 
       - name: Guardar cambios
+        if: github.event_name == 'push'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
